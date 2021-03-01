@@ -24,6 +24,10 @@ default: &default
 development:
   <<: *default
   database: micro_reddit_development
+  encoding: unicode
+  host: localhost
+  pool: 5
+  password: MyPassword
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,5 +86,6 @@ test:
 production:
   <<: *default
   database: micro_reddit_production
-  username: micro_reddit
-  password: <%= ENV['MICRO_REDDIT_DATABASE_PASSWORD'] %>
+  username: bbrooks
+  password: MyPassword
+  role: MyRole
